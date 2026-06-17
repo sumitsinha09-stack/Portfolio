@@ -1,6 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) return;
+
+    setStatus('sending');
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/sinsumit157@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `New Portfolio Message from ${formData.name}`,
+          _captcha: "false"
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="contact" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="text-center mb-16">
@@ -11,22 +57,61 @@ export default function Contact() {
       <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
         <div className="glass-panel p-8 rounded-2xl border border-primary/20 bg-card/40 backdrop-blur-md">
           <h3 className="text-xl font-bold mb-6 text-foreground">Transmission Form</h3>
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label className="block text-sm text-muted-foreground mb-1">Name</label>
-              <input type="text" className="w-full bg-background/50 border border-border rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-primary transition-colors" placeholder="Enter your designation" />
+              <input 
+                type="text" 
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full bg-background/50 border border-border rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-primary transition-colors" 
+                placeholder="Enter your designation" 
+              />
             </div>
             <div>
               <label className="block text-sm text-muted-foreground mb-1">Email</label>
-              <input type="email" className="w-full bg-background/50 border border-border rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-primary transition-colors" placeholder="Enter frequency channel (email)" />
+              <input 
+                type="email" 
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full bg-background/50 border border-border rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-primary transition-colors" 
+                placeholder="Enter frequency channel (email)" 
+              />
             </div>
             <div>
               <label className="block text-sm text-muted-foreground mb-1">Message</label>
-              <textarea rows={4} className="w-full bg-background/50 border border-border rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-primary transition-colors" placeholder="Enter message payload..."></textarea>
+              <textarea 
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={4} 
+                className="w-full bg-background/50 border border-border rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-primary transition-colors" 
+                placeholder="Enter message payload..."
+              ></textarea>
             </div>
-            <button className="w-full bg-primary/20 hover:bg-primary/40 border border-primary text-primary font-bold py-3 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(0,188,212,0.3)] hover:shadow-[0_0_25px_rgba(0,188,212,0.6)]">
-              Send Transmission
+            <button 
+              type="submit"
+              disabled={status === 'sending'}
+              className="w-full bg-primary/20 hover:bg-primary/40 disabled:bg-primary/10 disabled:text-primary/50 border border-primary text-primary font-bold py-3 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(0,188,212,0.3)] hover:shadow-[0_0_25px_rgba(0,188,212,0.6)] disabled:shadow-none"
+            >
+              {status === 'sending' ? 'Transmitting...' : 'Send Transmission'}
             </button>
+
+            {status === 'success' && (
+              <p className="text-green-400 text-sm mt-2 text-center animate-pulse">
+                ✓ Transmission successful! Signal received.
+              </p>
+            )}
+            {status === 'error' && (
+              <p className="text-red-400 text-sm mt-2 text-center animate-pulse">
+                ✗ Transmission failed. Please verify signal link and try again.
+              </p>
+            )}
           </form>
         </div>
         
@@ -34,7 +119,7 @@ export default function Contact() {
           <div className="glass-panel p-6 rounded-2xl border border-border bg-card/40 backdrop-blur-md hover:border-primary/50 transition-colors group cursor-pointer">
             <a href="mailto:sinsumit157@gmail.com" className="flex items-center space-x-4">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <svg xmlns="http://www.w3.org/-svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
               </div>
               <div>
                 <h4 className="font-bold text-foreground">Email</h4>
