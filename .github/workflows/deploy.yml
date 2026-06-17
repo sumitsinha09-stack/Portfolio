@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -35,7 +35,16 @@ jobs:
           version: 11.7.0
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile --ignore-scripts
+        run: |
+          pnpm install --no-frozen-lockfile --ignore-scripts > install_log.txt 2>&1 || {
+            cat install_log.txt
+            git config --global user.email "sinsumit157@gmail.com"
+            git config --global user.name "sumitsinha09-stack"
+            git add install_log.txt
+            git commit -m "ci: add install error logs for debugging"
+            git push origin main
+            exit 1
+          }
 
       - name: Build
         run: BASE_PATH=/Portfolio/ PORT=5173 pnpm build
