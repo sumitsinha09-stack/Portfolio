@@ -35,7 +35,7 @@ jobs:
           version: 11.7.0
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --no-frozen-lockfile --ignore-scripts
 
       - name: Build
         run: BASE_PATH=/Portfolio/ PORT=5173 pnpm build
