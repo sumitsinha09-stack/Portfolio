@@ -27,10 +27,8 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#hero" className="text-xl font-display font-bold text-foreground relative group">
-          WELCOME
-          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300 shadow-[0_0_8px_#00bcd4]" />
-        </a>
+        {/* Spacer to prevent overlapping with the floating view mode switcher on the top-left */}
+        <div className="w-12 sm:w-24 md:w-32 h-6" />
         
         <nav className="hidden md:flex items-center space-x-1">
           {navItems.map((item, index) => (

@@ -33,10 +33,10 @@ export default function About() {
             
             <div className="space-y-6 text-lg text-muted-foreground">
               <p>
-                B.Tech CSE student at SRM University. Strong foundation in C, C++, Java, Python, JavaScript, TypeScript. Passionate about AI, Machine Learning, Full Stack Development, Mobile Development, and Cloud Technologies.
+                B.Tech Computer Science Engineering student at SRM Institute of Science and Technology, Chennai, with a strong foundation in software development, machine learning, and AI. Skilled in Python, JavaScript, C++, React, Flask, SQL, and cloud technologies. Barclays Hack-O-Hire 2026 Finalist with hands-on experience building AI-powered fintech and full-stack solutions.
               </p>
               <p>
-                Barclays Hack-O-Hire 2026 Finalist and member of Team Neural Nexus. Dedicated to building intelligent solutions and pushing the boundaries of what's possible.
+                Passionate about developing innovative technologies that solve real-world problems and continuously exploring advancements in Artificial Intelligence, Full-Stack Development, Mobile Applications, and Cloud Computing.
               </p>
               
               <div className="mt-8 p-6 rounded-2xl bg-black/40 border border-primary/30">

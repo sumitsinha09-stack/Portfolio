@@ -25,6 +25,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          <h3 className="text-4xl md:text-5xl font-display font-bold text-accent tracking-[0.2em] uppercase mb-4 drop-shadow-[0_0_12px_rgba(0,251,255,0.4)] animate-pulse">WELCOME</h3>
           <h2 className="text-primary font-mono tracking-widest uppercase mb-4 text-sm md:text-base">Mission Commander</h2>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
             Sumit Sinha
