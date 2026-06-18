@@ -23,12 +23,6 @@ const experiences = [
     description: "Coordinated technical sessions and ensured smooth on-ground event operations. Contributed to building a strong technical community."
   },
   {
-    title: "Aaruush, SRM University",
-    role: "Committee Member",
-    date: "May 2025 - Present",
-    description: "Led technical event planning for one of India's largest student-run tech fests, managing technical logistics and execution."
-  },
-  {
     title: "SNS Polycraft India",
     role: "UI/UX Designer",
     date: "Feb 2026 - Present",
