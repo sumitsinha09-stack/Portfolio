@@ -151,6 +151,22 @@ export default function Contact() {
               </div>
             </a>
           </div>
+
+          <div className="glass-panel p-6 rounded-2xl border border-border bg-card/40 backdrop-blur-md hover:border-primary/50 transition-colors group cursor-pointer">
+            <a href="https://www.instagram.com/sumit09__/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-foreground">Instagram</h4>
+                <p className="text-muted-foreground">@sumit09__</p>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
