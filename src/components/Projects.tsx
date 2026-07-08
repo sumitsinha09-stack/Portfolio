@@ -12,6 +12,22 @@ const projects = [
     featured: true
   },
   {
+    title: "IndiClima Twin",
+    subtitle: "AI Climate Digital Twin for India",
+    description: "Architected a full-stack AI climate digital twin for India integrating 5 real-time data sources across 8 modules. Features a hazard prediction engine for 6 disaster categories, district-level risk scoring, and a scenario simulator. Deployed for ISRO Build-a-thon 2026.",
+    tech: ["React", "TypeScript", "Express", "PostgreSQL", "OpenAPI 3.1", "Zod"],
+    github: "https://github.com/sumitsinha09-stack/IndiClima-Twin.git",
+    featured: true
+  },
+  {
+    title: "AEGIS",
+    subtitle: "Geopolitical Intelligence Dashboard",
+    description: "Full-stack geopolitical intelligence platform monitoring 5 maritime corridors in a 4-package TypeScript monorepo. Features an AI-powered procurement orchestration system with LLM reasoning and an interactive digital twin for corridor closure simulations.",
+    tech: ["React 19", "Express 5", "OpenAPI 3.0", "React Query v5", "Zod v4", "PostgreSQL"],
+    github: "https://github.com/sumitsinha09-stack/AEGIS.git",
+    featured: false
+  },
+  {
     title: "TAXISYS",
     subtitle: "Efficient Data Entry and Analysis",
     description: "Web service for real-time spreadsheet integration with automated column classification to streamline data processing workflows.",

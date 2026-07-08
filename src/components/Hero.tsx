@@ -57,7 +57,7 @@ export default function Hero() {
               View Projects
             </a>
             <a 
-              href="https://drive.google.com/file/d/1WGdRtIcjpDaSlG010AJj-MC7HLx6Z945/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1N_ZTGwifwF39HKzGkdYdJnn_rvnAPMKx/view?usp=share_link" 
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-3 bg-card border border-primary/50 text-foreground font-bold rounded-full hover:bg-primary/10 transition-colors"
