@@ -10,22 +10,15 @@ const experiences = [
     highlight: true
   },
   {
-    title: "Barclays Hack-O-Hire 2026",
-    role: "Finalist (Team Neural Nexus)",
-    date: "Reached Finale",
-    description: "Competed at Barclays Chennai Campus, building innovative solutions and demonstrating technical excellence under pressure.",
-    highlight: true
-  },
-  {
     title: "IEEE CS SB SRMIST",
     role: "Technical Member",
-    date: "March 2026 - Present",
+    date: "March 2026 - May 2026",
     description: "Coordinated technical sessions and ensured smooth on-ground event operations. Contributed to building a strong technical community."
   },
   {
     title: "SNS Polycraft India",
     role: "UI/UX Designer",
-    date: "Feb 2026 - Present",
+    date: "Feb 2026 - April 2026",
     description: "Refined navigation elements and developed process flow diagrams to enhance user experience and product usability."
   }
 ];

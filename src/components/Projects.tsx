@@ -12,6 +12,14 @@ const projects = [
     featured: true
   },
   {
+    title: "GridX",
+    subtitle: "AI-Powered Power Grid Cascading Failure Predictor",
+    description: "Real-time cascade predictor using a 2-head GATv2 model on the IEEE 39-Bus grid (85.8% F1 score across 10,000+ failure scenarios). Modeled electrical grid physics with Pandapower for automated N-1 contingency analysis, and deployed a FastAPI and React telemetry dashboard to simulate load surges (0.8x–2.5x), line trips, and 3-tier risk alerts with sub-second inference.",
+    tech: ["PyTorch", "GATv2", "FastAPI", "React", "Pandapower"],
+    github: "https://github.com/sumitsinha09-stack/GridX.git",
+    featured: true
+  },
+  {
     title: "IndiClima Twin",
     subtitle: "AI Climate Digital Twin for India",
     description: "Architected a full-stack AI climate digital twin for India integrating 5 real-time data sources across 8 modules. Features a hazard prediction engine for 6 disaster categories, district-level risk scoring, and a scenario simulator. Deployed for ISRO Build-a-thon 2026.",
