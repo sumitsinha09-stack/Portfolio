@@ -4,6 +4,14 @@ import Tilt from './Tilt';
 
 const projects = [
   {
+    title: "FRAUDLI",
+    subtitle: "Multi-Modal Scam & Deepfake Detection",
+    description: "End-to-end scam detection platform analyzing 5 threat vectors (SMS, URL, Voice, Video, Files) via a 4-layer hybrid NLP pipeline (XGBoost Accuracy: 96.93%, trained on 18,800+ records). Features real-time audio & deepfake forensics using Whisper STT and ECAPA-TDNN biometrics (<1.5s latency), alongside a Threat Fusion Engine with ChromaDB vector search across 55+ scam templates and Shadow Guard & DLP for PII sanitization.",
+    tech: ["XGBoost", "FastAPI", "Next.js", "ChromaDB", "Whisper", "ECAPA-TDNN"],
+    github: "https://github.com/sumitsinha09-stack/Fraudli.git",
+    featured: true
+  },
+  {
     title: "PDR (Paisa Do Re)",
     subtitle: "AI-Powered Alternate Credit Scoring",
     description: "Built for Barclays Hack-O-Hire 2026. B2B platform to score credit-invisible MSMEs and NTC borrowers. Uses XGBoost (AUC: 0.74), fraud detection, SHAP-based XAI for regulatory compliance.",
